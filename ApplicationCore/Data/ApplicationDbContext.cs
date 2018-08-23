@@ -6,9 +6,9 @@ using System.Text;
 
 namespace ApplicationCore.Data
 {
-    public class ApplicationDbCotext : DbContext
+    public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbCotext(DbContextOptions<ApplicationDbCotext> options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             :base(options) {}
 
         public DbSet<Factura> Facturas { get; set; }

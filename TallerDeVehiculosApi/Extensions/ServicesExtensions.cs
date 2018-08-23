@@ -19,7 +19,7 @@ namespace TallerDeVehiculosApi.Extencions
             sb.IntegratedSecurity = true;
 
 
-            service.AddDbContext<ApplicationDbCotext>(
+            service.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(sb.ToString())
                 );
                 
