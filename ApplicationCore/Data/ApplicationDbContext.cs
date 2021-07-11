@@ -8,6 +8,18 @@ namespace ApplicationCore.Data
 {
     public class ApplicationDbContext : DbContext
     {
+        private int sum; 
+
+        public int returnSum()
+        {
+            return sum * 5;
+        }
+
+        public int returnSum(int i)
+        {
+            sum = i;
+        }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             :base(options) {}
 
@@ -21,6 +33,5 @@ namespace ApplicationCore.Data
         public DbSet<Mecanico> Mecanicos { get; set; }
         public DbSet<Vehiculo> Vehiculos { get; set; }
         public DbSet<Area_Reparacion> Area_Reparacion { get; set; }
-
     }
 }

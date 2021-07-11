@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Repository
 {
-    public interface IRepository<T> where T : BaseEntity
+    public interface IRepository<T> where T : BaseEntity, new()
     {
         Task<List<T>> GetAllAsync(params Expression<Func<T, object>>[] includes);
         Task<T> GetByIdAsync(int id, Expression<Func<T, Object>>[] includes);
-        Task<T> GetByIdAsync(int id);
-
+        Task<T> GetByIdAsync(int id, string x, params string[] y );
         Task<T> AddAsync(T entity);
         Task UpdateAsync(T entity);
         Task DeleteAsync(T entity);
